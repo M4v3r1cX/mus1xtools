@@ -34,15 +34,16 @@ public class Main {
 		if (folder.exists() && folder.isDirectory()) {
 			File[] files = folder.listFiles();
 			if (files != null && files.length > 0) {
-				int totalfiles = files.length + 1;
+				int totalfiles = files.length;
 				System.out.println("Tryin to rename " + totalfiles + " files.");
 				for (int i = 0; i < files.length; i++) {
 					String name = files[i].getName();
 					StringBuilder auxName = new StringBuilder(name);
 					char[] characters = name.toCharArray();
 					for (int x = 0; x < characters.length; x++) {
-						if (!Character.isLetter(characters[x])) {
-							auxName.deleteCharAt(x);
+						char c = characters[x];
+						if (!Character.isLetter(c)) {
+							auxName.deleteCharAt(0);
 						} else {
 							break;
 						}
@@ -56,8 +57,8 @@ public class Main {
 					} else {
 						System.out.println("[" + (i + 1) + "/" + totalfiles + "] No need to rename the file.");
 					}
-					System.out.println("Process finished!");
 				}
+				System.out.println("Process finished!");
 			} else {
 				System.out.println("Folder is empty");
 				System.exit(0);
