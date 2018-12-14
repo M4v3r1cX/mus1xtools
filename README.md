@@ -1,5 +1,5 @@
 # Mus1xTools
-Mus1xTools is my own little tool for managing my music library to how I use it. So far it doesn't work for shit.
+Mus1xTools is my own little tool for managing my music library to how I use it. It barely works.
 
 # Available Functions
 > takeNumbersOut: Renames all files in folder to take out the first numbers from the track listing.
